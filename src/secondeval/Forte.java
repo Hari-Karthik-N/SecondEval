@@ -72,7 +72,8 @@ public class Forte {
                     } else if (operatorCombo[0].equals("*")) {
                         firstResult = (Integer.parseInt(firstOperandPair[0])) * (Integer.parseInt(firstOperandPair[1]));
                     } else if (operatorCombo[0].equals("/")) {
-                        firstResult = (Integer.parseInt(firstOperandPair[0])) / ((Integer.parseInt(firstOperandPair[1])) == 0 ? -1 : (Integer.parseInt(firstOperandPair[1])));
+                        if((Integer.parseInt(firstOperandPair[1])) == 0) break;
+                        firstResult = (Integer.parseInt(firstOperandPair[0])) / ((Integer.parseInt(firstOperandPair[1])));
                     }
 
                     if(operatorCombo[2].equals("+")) {
@@ -82,7 +83,8 @@ public class Forte {
                     } else if (operatorCombo[2].equals("*")) {
                         secondResult = (Integer.parseInt(secondOperandPair[0])) * (Integer.parseInt(secondOperandPair[1]));
                     } else if (operatorCombo[2].equals("/")) {
-                        secondResult = (Integer.parseInt(secondOperandPair[0])) / ((Integer.parseInt(secondOperandPair[1])) == 0 ? -1 : (Integer.parseInt(secondOperandPair[1])));
+                        if((Integer.parseInt(secondOperandPair[1])) == 0) break;
+                        secondResult = (Integer.parseInt(secondOperandPair[0])) / ((Integer.parseInt(secondOperandPair[1])));
                     }
 
                     if(operatorCombo[1].equals("+")) {
@@ -92,7 +94,8 @@ public class Forte {
                     } else if (operatorCombo[1].equals("*")) {
                         totalResult = firstResult * secondResult;
                     } else if (operatorCombo[1].equals("/")) {
-                        totalResult = firstResult / (secondResult == 0 ? -1 : secondResult);
+                        if(secondResult == 0) break;
+                        totalResult = firstResult / (secondResult);
                     }
 
                     if(totalResult == result) {
