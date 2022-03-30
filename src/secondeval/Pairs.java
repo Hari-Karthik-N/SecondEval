@@ -15,10 +15,6 @@ public class Pairs {
         }
         System.out.println("enter k: ");
         int k = input.nextInt();
-        if(k == 0) {
-            System.out.println("k can't be zero");
-            return;
-        }
         int pairCount = 0;
         for(int i = 0; i < size-1;i++) {
             for(int j = i+1; j < size; j++) {
